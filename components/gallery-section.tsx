@@ -25,7 +25,7 @@ const PROFILE_CONFIG = {
 const storyItems = [
   {
     id: 1,
-    image: "/placeholder.svg?height=800&width=450",
+    image: "https://iili.io/F75zNJR.jpg",
     title: "Editorial Fashion",
     location: "Milano, Italy",
     likes: 0,
@@ -33,7 +33,7 @@ const storyItems = [
   },
   {
     id: 2,
-    image: "/placeholder.svg?height=800&width=450",
+    image: "https://iili.io/F75TE6g.md.jpg",
     title: "Behind the Scenes",
     location: "Paris, France",
     likes: 0,
@@ -41,7 +41,7 @@ const storyItems = [
   },
   {
     id: 3,
-    image: "/placeholder.svg?height=800&width=450",
+    image: "/https://iili.io/F75u40g.md.jpg",
     title: "Studio Session",
     location: "New York, USA",
     likes: 0,
@@ -49,7 +49,7 @@ const storyItems = [
   },
   {
     id: 4,
-    image: "/placeholder.svg?height=800&width=450",
+    image: "https://iili.io/F75AyZB.jpg",
     title: "Street Style",
     location: "London, UK",
     likes: 0,
@@ -57,7 +57,7 @@ const storyItems = [
   },
   {
     id: 5,
-    image: "/placeholder.svg?height=800&width=450",
+    image: "https://iili.io/F75570F.md.jpg",
     title: "Campaign Shoot",
     location: "Tokyo, Japan",
     likes: 0,
@@ -65,7 +65,7 @@ const storyItems = [
   },
   {
     id: 6,
-    image: "/placeholder.svg?height=800&width=450",
+    image: "https://iili.io/F75712e.jpg",
     title: "Runway Backstage",
     location: "São Paulo, Brazil",
     likes: 0,
