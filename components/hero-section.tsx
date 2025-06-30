@@ -22,10 +22,10 @@ export default function HeroSection() {
   }, [])
 
   const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Music, href: "#", label: "TikTok" },
-    { icon: Mail, href: "#", label: "Email" },
+    { icon: Instagram, href: "https://instagram.com/dougm_", label: "Instagram" },
+    { icon: Youtube, href: "https://youtu.be/uavy66h3p9o", label: "YouTube" },
+    { icon: Music, href: "https://www.instagram.com/stories/highlights/17929496515387117/", label: "PlayList" },
+    { icon: Mail, href: "contato.douglasmyth@gmail.com", label: "Email" },
   ]
 
   return (
