@@ -11,6 +11,17 @@ import { useSwipe } from "@/hooks/use-swipe"
 import { useDoubleTap } from "@/hooks/use-double-tap"
 import HeartAnimation from "@/components/heart-animation"
 
+// CONFIGURAÇÃO DO PERFIL - EDITE AQUI SUA FOTO
+const PROFILE_CONFIG = {
+  // Substitua este URL pela sua foto hospedada
+  profileImage: "/images/perfil.png", // ou "https://seu-link-da-foto.com/foto.jpg"
+  name: "Douglas Myth",
+  username: "@douglasmyth",
+  bio: "Modelo Internacional • Criador de Conteúdo",
+  followers: "350K",
+  following: "1.2K",
+}
+
 const storyItems = [
   {
     id: 1,
@@ -62,6 +73,8 @@ const storyItems = [
   },
 ]
 
+const posts = storyItems.length || 6
+
 interface StoryHeart {
   id: string
   x: number
@@ -76,7 +89,6 @@ export default function GallerySection() {
   const [isLiked, setIsLiked] = useState(false)
   const [isPlaying, setIsPlaying] = useState(true)
   const [viewMode, setViewMode] = useState<"story" | "grid">("story")
-  const [selectedGridImage, setSelectedGridImage] = useState<number | null>(null)
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -188,41 +200,90 @@ export default function GallerySection() {
               MOMENTOS EXCLUSIVOS • BASTIDORES • EDITORIAL
             </p>
           </motion.div>
+        </motion.div>
 
-          {/* View Mode Toggle */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex justify-center space-x-4 mb-8"
+        {/* Instagram Profile Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="max-w-md mx-auto mb-12"
+        >
+          <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl p-8 border border-gray-200 dark:border-gray-800">
+            {/* Profile Picture with Instagram-style border */}
+            <div className="flex flex-col items-center mb-6">
+              <div className="relative mb-4">
+                {/* Instagram gradient border */}
+                <div className="w-32 h-32 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 p-1">
+                  <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 p-1">
+                    <img
+                      src={PROFILE_CONFIG.profileImage || "/placeholder.svg"}
+                      alt={PROFILE_CONFIG.name}
+                      className="w-full h-full rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Profile Info */}
+              <div className="text-center">
+                <h3 className="text-2xl font-serif font-bold dark:text-white mb-1">{PROFILE_CONFIG.name}</h3>
+                <p className="text-gray-500 dark:text-gray-400 mb-2">{PROFILE_CONFIG.username}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">{PROFILE_CONFIG.bio}</p>
+              </div>
+
+              {/* Stats */}
+              <div className="flex items-center justify-center space-x-8 w-full">
+                <div className="text-center">
+                  <div className="text-xl font-bold dark:text-white">{posts}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">Posts</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold dark:text-white">{PROFILE_CONFIG.followers}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">Seguidores</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold dark:text-white">{PROFILE_CONFIG.following}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wide">Seguindo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* View Mode Toggle */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="flex justify-center space-x-4 mb-8"
+        >
+          <Button
+            variant={viewMode === "story" ? "default" : "outline"}
+            size="sm"
+            onClick={() => setViewMode("story")}
+            className={`rounded-full px-6 ${
+              viewMode === "story"
+                ? "bg-black text-white dark:bg-white dark:text-black"
+                : "border-gray-300 dark:border-gray-600 bg-transparent"
+            }`}
           >
-            <Button
-              variant={viewMode === "story" ? "default" : "outline"}
-              size="sm"
-              onClick={() => setViewMode("story")}
-              className={`rounded-full px-6 ${
-                viewMode === "story"
-                  ? "bg-black text-white dark:bg-white dark:text-black"
-                  : "border-gray-300 dark:border-gray-600 bg-transparent"
-              }`}
-            >
-              <Maximize2 size={16} className="mr-2" />
-              STORIES
-            </Button>
-            <Button
-              variant={viewMode === "grid" ? "default" : "outline"}
-              size="sm"
-              onClick={() => setViewMode("grid")}
-              className={`rounded-full px-6 ${
-                viewMode === "grid"
-                  ? "bg-black text-white dark:bg-white dark:text-black"
-                  : "border-gray-300 dark:border-gray-600 bg-transparent"
-              }`}
-            >
-              <Grid3X3 size={16} className="mr-2" />
-              GRID
-            </Button>
-          </motion.div>
+            <Maximize2 size={16} className="mr-2" />
+            STORIES
+          </Button>
+          <Button
+            variant={viewMode === "grid" ? "default" : "outline"}
+            size="sm"
+            onClick={() => setViewMode("grid")}
+            className={`rounded-full px-6 ${
+              viewMode === "grid"
+                ? "bg-black text-white dark:bg-white dark:text-black"
+                : "border-gray-300 dark:border-gray-600 bg-transparent"
+            }`}
+          >
+            <Grid3X3 size={16} className="mr-2" />
+            GRID
+          </Button>
         </motion.div>
 
         {/* Story Mode */}
@@ -271,7 +332,7 @@ export default function GallerySection() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 1 }}
               className="relative"
             >
               <div
