@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Douglas Myth - Modelo Profissional e Criador de Conteúdo",
     description: "Descubra o mundo de Douglas Myth - modelo internacional e criador de conteúdo",
   },
-    generator: 'v0.dev'
+    generator: '@guilhermee.belo'
 }
 
 export default function RootLayout({
