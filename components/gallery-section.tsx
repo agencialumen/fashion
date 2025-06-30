@@ -41,7 +41,7 @@ const storyItems = [
   },
   {
     id: 3,
-    image: "/https://iili.io/F75u40g.md.jpg",
+    image: "https://iili.io/F75u40g.md.jpg",
     title: "Studio Session",
     location: "New York, USA",
     likes: 0,
