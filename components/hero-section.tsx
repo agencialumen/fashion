@@ -6,9 +6,9 @@ import { Instagram, Youtube, Music, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const heroImages = [
-  "/placeholder.svg?height=1080&width=1920",
-  "/placeholder.svg?height=1080&width=1920",
-  "/placeholder.svg?height=1080&width=1920",
+  "https://iili.io/F7C0CN9.jpg",
+  "https://iili.io/F7C0CN9.jpg",
+  "https://iili.io/F7CyAZv.jpg",
 ]
 
 export default function HeroSection() {
