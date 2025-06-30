@@ -14,12 +14,12 @@ import HeartAnimation from "@/components/heart-animation"
 // CONFIGURAÇÃO DO PERFIL - EDITE AQUI SUA FOTO
 const PROFILE_CONFIG = {
   // Substitua este URL pela sua foto hospedada
-  profileImage: "/images/perfil.png", // ou "https://seu-link-da-foto.com/foto.jpg"
+  profileImage: "https://iili.io/F7RdhrX.md.jpg", // ou "https://seu-link-da-foto.com/foto.jpg"
   name: "Douglas Myth",
   username: "@douglasmyth",
   bio: "Modelo Internacional • Criador de Conteúdo",
-  followers: "350K",
-  following: "1.2K",
+  followers: "37,4 mil",
+  following: "1.0k",
 }
 
 const storyItems = [
