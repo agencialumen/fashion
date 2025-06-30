@@ -6,7 +6,7 @@ import { Instagram, Youtube, Music, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const heroImages = [
-  "https://iili.io/F7C0CN9.jpg",
+  "https://iili.io/F7CrbJ2.md.jpg",
   "https://iili.io/F7C0CN9.jpg",
   "https://iili.io/F7CyAZv.jpg",
 ]
