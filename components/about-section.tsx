@@ -89,7 +89,7 @@ export default function AboutSection() {
               className="grid grid-cols-3 gap-6 pt-8"
             >
               {[
-                { number: "100K+", label: "Seguidores" },
+                { number: "37,4 mil", label: "Seguidores" },
                 { number: "50+", label: "Colaborações" },
                 { number: "5+", label: "Anos de Experiência" },
               ].map((stat, index) => (
